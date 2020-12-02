@@ -4,6 +4,8 @@ import os
 import shutil
 import numpy as np
 from matplotlib.pyplot import imread
+import scipy.spatial.distance as distance
+
 
 def load_data():
     """Load data and convert it to the metrics system."""
@@ -39,8 +41,4 @@ def build_distance_matrix(data, mu):
     row of the matrix represents the data point,
     column of the matrix represents the k-th cluster.
     """
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # TODO: build distance matrix
-    # ***************************************************
-    raise NotImplementedError
+    return distance.cdist(data, mu)
